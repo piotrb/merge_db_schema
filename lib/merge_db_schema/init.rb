@@ -31,11 +31,11 @@ module MergeDBSchema
       end
 
       def init_gitconfig(force)
-        gitconfig_content = <<~END
-          [merge "merge_db_schema"]
-          \tname = Merge db/schema.rb
-          \tdriver = merge_db_schema %O %A %B
-          \trecursive = text
+        gitconfig_content = <<-END
+[merge "merge_db_schema"]
+\tname = Merge db/schema.rb
+\tdriver = merge_db_schema %O %A %B
+\trecursive = text
         END
 
         unless force
