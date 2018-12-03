@@ -32,6 +32,9 @@ module MergeDBSchema
         text = path.read
         text[RE_DEFINE, 1] = version.to_s
         path.write(text)
+      rescue IndexError => e
+        $stderr.puts "#{e.message} in --"
+        $stderr.puts text
       end
     end
   end
